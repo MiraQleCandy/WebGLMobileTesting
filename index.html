@@ -9,7 +9,6 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <h1>Test 01</h1>
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -18,7 +17,7 @@
         </div>
       </div>
       <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices. 1
+        WebGL builds are not supported on mobile devices.
       </div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
@@ -62,8 +61,6 @@
         setTimeout(() => {
           mobileWarning.style.display = "none";
         }, 5000);
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
       } else {
         canvas.style.width = "960px";
         canvas.style.height = "600px";
