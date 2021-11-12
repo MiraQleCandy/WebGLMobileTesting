@@ -93,7 +93,7 @@
             const signature = await signer.signMessage(token);
             console.log(signature);
 
-            unityInstance.SendMessage("ServerApi","SigninWithSignature",signature);
+            unityInstance.SendMessage("GameObject","SigninWithSignature",signature);
         }
 
         function setCookie(name,value,days) {
