@@ -44,6 +44,7 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
+      var unityInstance;
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
@@ -73,6 +74,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((ui) => {
+          unityInstance = ui;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -83,7 +85,7 @@
       };
       document.body.appendChild(script);
 
-      var unityInstance = ui;
+      
 
       async function GetSigner(token) {
             const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
