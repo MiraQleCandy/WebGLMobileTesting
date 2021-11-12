@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = createUnityInstance("unityContainer", "Build/WebGLMobileTesting.json", {onProgress: UnityProgress});
-      console.log(unityInstance);
-    </script>
+
   </head>
   <body>
     <div class="webgl-content">
@@ -33,7 +30,7 @@
             const signature = await signer.signMessage(token);
             console.log(signature);
 
-            unityInstance.SendMessage("Bridge","SendToUnity",signature);
+            unityInstance.SendMessage("ServerApi","SigninWithSignature",signature);
         }
 
         function setCookie(name,value,days) {
