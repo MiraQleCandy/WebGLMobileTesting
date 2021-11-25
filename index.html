@@ -72,6 +72,8 @@
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
         const signature = await signer.signMessage(token);
+
+        console.log("Token : " + token);
         console.log("Signature : " + signature);
 
         unityInstance.SendMessage("JavascriptMessageHandler","SigninWithSignature",signature);
