@@ -68,12 +68,11 @@
       document.body.appendChild(script);
 
       async function GetSigner(token) {
+        console.log("Token : " + token);
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
         const signature = await signer.signMessage(token);
-
-        console.log("Token : " + token);
         console.log("Signature : " + signature);
 
         unityInstance.SendMessage("JavascriptMessageHandler","SigninWithSignature",signature);
