@@ -16,5 +16,5 @@ Used to set the network
 43114 Avalanche Mainnet
 */
 
-window.web3NetworkId = 25925;
-window.web3NetworkName = "Bitkub Chain - Testnet"
+window.web3NetworkId = 97;
+window.infuraKey = "Binance Smart Chain Testnet"
